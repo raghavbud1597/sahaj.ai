@@ -9,3 +9,9 @@ export const login = () => {
         type: 'SIGN_IN'
     }
 }
+
+export const getCategories = () => {
+    return {
+        type: 'CATEGORY_LIST'
+    }
+}

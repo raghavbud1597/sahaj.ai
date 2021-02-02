@@ -6,17 +6,17 @@ import {
     Col,
     Button 
  } from 'react-bootstrap';
- import {getEmailList} from './../actions';
- import {useSelector, useDispatch } from 'react-redux';
+import {getEmailList} from './../actions';
+import {useSelector, useDispatch } from 'react-redux';
 import EmailList from '../EmailList';
 
 export default function RecievedEmails() {
     const emails = useSelector(state => state.emails);
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(getEmailList());
     }, []);
-    console.log(emails);
 
     return (
         <div>
