@@ -1,4 +1,4 @@
-import RecievedEmails from './RecievedEmails';
+import Inbox from './Inbox';
 import './style/App.scss';
 import {useSelector, useDispatch } from 'react-redux';
 import {login} from './actions'
@@ -8,8 +8,7 @@ function App() {
   const dispatch = useDispatch();
   return (
     <div className="App">
-      <button onClick={() => dispatch(login())}>Login</button>
-      {isLogged ? <RecievedEmails/> : ''}
+      {isLogged ? <Inbox/> : <button onClick={() => dispatch(login())}>Login</button>}
     </div>
   );
 }

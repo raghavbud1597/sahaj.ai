@@ -1,5 +1,4 @@
 export const getEmailList = () => {
-    debugger;
     return {
         type: 'EMAIL_LIST'
     }

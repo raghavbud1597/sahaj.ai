@@ -1,20 +1,20 @@
 import React from 'react'
 import { 
     Row,
-    Col,
-    Button 
+    Col 
  } from 'react-bootstrap';
-import EmailList from '../EmailList';
+import RecievedEmails from '../RecievedEmails';
+import Sidebar from '../Sidebar';
 
 export default function Inbox() {
     return (
         <div>
             <Row>
                 <Col md={4}>
-                    <SideBar></SideBar>
+                    <Sidebar></Sidebar>
                 </Col>
                 <Col md={8}>
-                    <EmailList/>
+                    <RecievedEmails/>
                 </Col>
             </Row>
         </div>
