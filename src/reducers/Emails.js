@@ -1,6 +1,6 @@
 import emailList from './../Constants/emailList';
 
-const emailReducer = (state = {}, action) => {
+const emailReducer = (state = [], action) => {
     switch(action.type) {
         case 'EMAIL_LIST':
             return { 
@@ -8,7 +8,7 @@ const emailReducer = (state = {}, action) => {
                     emailList: emailList
                 }   
         case 'SENT_EMAIL_LIST':
-            return state + 2
+            return state
         default:
             return state 
     }
