@@ -5,6 +5,7 @@ import {
 import FolderListItem from './FolderListItem';
 import folderList from './../Constants/FolderList'
 import Categories from './Categories';
+import Labels from './Labels';
 
 export default function Sidebar() {
     return (
@@ -25,6 +26,7 @@ export default function Sidebar() {
             }) : '' }
             <p className="text-capitalize my-2">Categories</p>
             <Categories/>
+            <Labels/>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import labelList from './../Constants/labels';
 
-const labelReducer = (state = {}, action) => {
+const labelReducer = (state = [], action) => {
     switch(action.type) {
         case 'GET_LABELS':
             return { 

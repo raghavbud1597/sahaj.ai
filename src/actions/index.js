@@ -15,3 +15,9 @@ export const getCategories = () => {
         type: 'CATEGORY_LIST'
     }
 }
+
+export const getLabels = () => {
+    return {
+        type: 'GET_LABELS'
+    }
+}
