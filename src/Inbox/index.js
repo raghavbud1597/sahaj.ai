@@ -9,11 +9,13 @@ import Sidebar from '../Sidebar';
 import TopNav from '../Navbar/TopNav';
 import LeftNav from '../Navbar/LeftNav';
 import styled from 'styled-components';
+import EmailDetail from '../EmailDetail';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const InboxSection = styled(Row)`
     background-color: #F3F3F4;
-    padding-top: 20px;
+    padding: 15px;
+    height: calc(100% - 70px);
 `
 
 export default function Inbox() {
@@ -21,7 +23,7 @@ export default function Inbox() {
 
     return (
         <div className="vh-100 vw-100">
-            <Row className="no-gutters">
+            <Row className="no-gutters h-100">
                 <Col md={expandLeftNav ? 3 : 1 } className="p-0">
                     <LeftNav/>
                 </Col>
@@ -39,6 +41,7 @@ export default function Inbox() {
                                 <Switch>
                                     <Route path="/sent" component={SentEmails}/>
                                     <Route path="/" exact component={RecievedEmails}/>
+                                    <Route path="/mails/:id" exact component={EmailDetail}/>
                                 </Switch>
                             </Col>
                         </InboxSection>

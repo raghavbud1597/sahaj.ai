@@ -2,27 +2,27 @@ const categoryList = [
     {
         id: 1,
         name: 'Work',
-        color: 'green'
+        color: '#a4af69'
     },
     {
         id: 2,
         name: 'Documents',
-        color: 'red'
+        color: '#D35269'
     },
     {
         id: 3,
         name: 'Social',
-        color: 'blue'
+        color: '#8EE3EF'
     },
     {
         id: 4,
         name: 'Advertising',
-        color: 'cyan'
+        color: '#AEF3E7'
     },
     {
         id: 5,
         name: 'Clients',
-        color: 'yellow'
+        color: '#EFD9CE'
     }
 ];
 

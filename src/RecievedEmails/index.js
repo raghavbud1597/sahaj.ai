@@ -18,6 +18,7 @@ import View from './../images/view.webp';
 
 const EmailSection = styled.div`
     background-color: #FFF;
+    height: calc(100vh - 100px);
 `
 
 const ActionBtn = styled(Button)`
@@ -35,8 +36,8 @@ export default function RecievedEmails() {
     }, []);
 
     return (
-        <EmailSection className="py-3">
-            <Row className="justify-content-between px-3">
+        <EmailSection className="pt-3">
+            <Row className="justify-content-between px-3 no-gutters">
                 <Col md={4}>
                     <h2 className="font-weight-light">
                         Inbox 
@@ -56,7 +57,7 @@ export default function RecievedEmails() {
                     </InputGroup>
                 </Col>
             </Row>
-            <Row className="justify-content-between mb-4 px-3">
+            <Row className="justify-content-between mb-4 px-3 no-gutters">
                 <Col md={4}>
                     <ActionBtn variant="outline-secondary">
                         <img src={Refresh} alt="Refresh Icon" height="15" width="15" className="mr-1"/>

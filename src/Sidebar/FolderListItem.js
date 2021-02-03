@@ -1,6 +1,18 @@
 import React from 'react';
 import {Badge} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const BadgeSpan = styled(Badge)`
+    line-height: 17px;
+`
+const FolderNav = styled(Link)`
+    text-decoration: none;
+
+    &:hover{
+        text-decoration: none;
+    }
+`
 
 export default function FolderListItem({
     name='',
@@ -9,14 +21,14 @@ export default function FolderListItem({
     link ="#"
 }) {
     return (
-        <Link to={link}>
-            <div className="border-bottom d-flex justify-content-between">
-                <div>
+        <FolderNav to={link}>
+            <div className="border-bottom d-flex justify-content-between py-1">
+                <span className="text-secondary">
                     {name}
-                </div>
-                {badge ? <Badge variant={badge}>{count}</Badge> : ''}
+                </span>
+                {badge ? <BadgeSpan variant={badge}>{count}</BadgeSpan> : ''}
                 
             </div>
-        </Link>
+        </FolderNav>
     )
 }

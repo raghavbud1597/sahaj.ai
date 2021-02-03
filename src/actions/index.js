@@ -27,3 +27,9 @@ export const getLabels = () => {
         type: 'GET_LABELS'
     }
 }
+
+export const getSentEmailList = () => {
+    return {
+        type: 'SENT_EMAIL_LIST'
+    }
+}

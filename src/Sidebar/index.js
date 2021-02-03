@@ -13,7 +13,7 @@ export default function Sidebar() {
             <Button variant="primary" size="lg" block>
                 Compose Mail
             </Button>
-            <p className="text-capitalize my-2">folders</p>
+            <p className="font-weight-bold my-2 text-secondary">FOLDERS</p>
             {folderList ? folderList.map(item => {
                 return (
                     <FolderListItem
@@ -25,7 +25,7 @@ export default function Sidebar() {
                     />
                 )
             }) : '' }
-            <p className="text-capitalize my-2">Categories</p>
+            <p className="font-weight-bold my-2 text-secondary">CATEGORIES</p>
             <Categories/>
             <Labels/>
         </div>

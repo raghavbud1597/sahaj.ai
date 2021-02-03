@@ -6,18 +6,16 @@ import {
     Col,
     Button 
  } from 'react-bootstrap';
-import {getEmailList} from './../actions';
+import {getSentEmailList} from './../actions';
 import {useSelector, useDispatch } from 'react-redux';
 import EmailList from '../EmailList';
 import styled from 'styled-components';
 import Delete from './../images/delete.png';
 import Refresh from './../images/refresh.png';
-import Left from './../images/left-arrow.png';
-import Right from './../images/right-arrow.png';
-import View from './../images/view.webp';
 
 const EmailSection = styled.div`
     background-color: #FFF;
+    height: calc(100vh - 100px);
 `
 
 const ActionBtn = styled(Button)`
@@ -31,11 +29,11 @@ export default function SentEmails() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getEmailList());
+        dispatch(getSentEmailList());
     }, []);
 
     return (
-        <EmailSection className="py-3">
+        <EmailSection className="pt-3">
             <Row className="justify-content-between px-3">
                 <Col md={4}>
                     <h2 className="font-weight-light">
@@ -62,25 +60,11 @@ export default function SentEmails() {
                         Refresh
                     </ActionBtn>
                     <ActionBtn variant="outline-secondary">
-                        <img src={View} alt="View Icon" height="15" width="15"/>
-                    </ActionBtn>
-                    <ActionBtn variant="outline-secondary">
-                        !
-                    </ActionBtn>
-                    <ActionBtn variant="outline-secondary">
                         <img src={Delete} alt="Delete Icon" height="15" width="15"/>
                     </ActionBtn>
                 </Col>
-                <Col md={4} className="text-right">
-                    <Button variant="outline-secondary">
-                        <img src={Left} alt="Left Icon" height="15" width="15"/>
-                    </Button>
-                    <Button variant="outline-secondary">
-                        <img src={Right} alt="Right Icon" height="15" width="15"/>
-                    </Button>
-                </Col>
             </Row>
-            <EmailList emailList={emails.emailList}/>
+            <EmailList emailList={emails.sentList}/>
         </EmailSection>
     )
 }
