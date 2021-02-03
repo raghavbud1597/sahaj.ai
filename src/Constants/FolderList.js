@@ -3,11 +3,13 @@ const folderList = [
         id: 1,
         name: 'Inbox',
         badge: 'warning',
-        count: '16'
+        count: '16',
+        link: '/',
     },
     {
         id: 2,
         name: 'Sent Mail',
+        link: '/sent'
     },
     {
         id: 3,

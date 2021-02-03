@@ -21,6 +21,7 @@ export default function Sidebar() {
                         key={item.id}
                         badge={item.badge}
                         count={item.count}
+                        link={item.link}
                     />
                 )
             }) : '' }
