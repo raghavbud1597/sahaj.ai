@@ -13,17 +13,16 @@ export default function EmailList({emailList}) {
         <List>
             {emailList ? emailList.map(item => {
                 return (
-                    <Link to={`/mails/${item.id}`}>
-                        <EmailListItem
-                            name={item.name}
-                            title={item.title}
-                            key={item.id}
-                            time={item.time}
-                            isRead={item.isRead}
-                            isSelected={item.isSelected}
-                            isAttachment={item.isAttachment}
-                        />
-                    </Link>
+                    <EmailListItem
+                        id={item.id}
+                        name={item.name}
+                        title={item.title}
+                        key={item.id}
+                        time={item.time}
+                        isRead={item.isRead}
+                        isSelected={item.isSelected}
+                        isAttachment={item.isAttachment}
+                    />
                 )
             }) : '' }
         </List>

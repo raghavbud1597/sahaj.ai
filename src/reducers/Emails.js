@@ -12,6 +12,17 @@ const emailReducer = (state = [], action) => {
             return { 
                 ...state,
                 sentList: sentList
+            }
+        case 'MARK_CHECKED':
+            const updatedList = state?.emailList?.map((v) => {
+                if(v.id == action.payload){
+                    v.isSelected = !v.isSelected;
+                }
+                return v;
+            });
+            return {
+                ...state,
+                emailList: updatedList
             }  
         default:
             return state 

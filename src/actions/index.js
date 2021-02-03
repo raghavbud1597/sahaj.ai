@@ -33,3 +33,10 @@ export const getSentEmailList = () => {
         type: 'SENT_EMAIL_LIST'
     }
 }
+
+export const markChecked = (selectedId) => {
+    return {
+        type: 'MARK_CHECKED',
+        payload: selectedId
+    }
+}
