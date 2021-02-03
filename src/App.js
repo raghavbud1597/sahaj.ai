@@ -1,14 +1,13 @@
 import Inbox from './Inbox';
 import './style/App.scss';
-import {useSelector, useDispatch } from 'react-redux';
-import {login} from './actions'
+import {useSelector } from 'react-redux';
+import Signin from './SignIn'
 
 function App() {
   const isLogged = useSelector(state => state.isLogged);
-  const dispatch = useDispatch();
   return (
     <div className="App">
-      {isLogged ? <Inbox/> : <button onClick={() => dispatch(login())}>Login</button>}
+      {isLogged ? <Inbox/> : <Signin/>}
     </div>
   );
 }
