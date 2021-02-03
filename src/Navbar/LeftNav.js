@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {Nav} from 'react-bootstrap';
 import Email from './../images/email.png';
+import ExpandedLeftNav from './ExpandedLeftNav';
 
 const NavBar = styled(Nav)`
     background-color: #2E4050;
@@ -28,32 +29,34 @@ const NavBanner = styled.div`
     text-align: center;
 `
 
-export default function LeftNav() {
-    return (
+export default function LeftNav({
+    expandLeftNav
+}) {
+    return expandLeftNav ? <ExpandedLeftNav/> : (
         <NavBar className="flex-column h-100 align-items-center">
-            <NavBanner className="text-white">
-                <h1>IN+</h1>
+            <NavBanner className="text-white py-3">
+                <h3>IN+</h3>
             </NavBanner>
             <NavLink>
-                <img src={Email} alt="Message Icon" height="30" width="30"/>
+                <img src={Email} alt="Message Icon" height="20" width="20"/>
             </NavLink>
             <NavLink>
-                <img src={Email} alt="Message Icon" height="30" width="30"/>
+                <img src={Email} alt="Message Icon" height="20" width="20"/>
             </NavLink>
             <NavLink >
-                <img src={Email} alt="Message Icon" height="30" width="30"/>
+                <img src={Email} alt="Message Icon" height="20" width="20"/>
             </NavLink>
             <NavLink className="active">
-                <img src={Email} alt="Message Icon" height="30" width="30"/>
+                <img src={Email} alt="Message Icon" height="20" width="20"/>
             </NavLink>
             <NavLink>
-                <img src={Email} alt="Message Icon" height="30" width="30"/>
+                <img src={Email} alt="Message Icon" height="20" width="20"/>
             </NavLink>
             <NavLink>
-                <img src={Email} alt="Message Icon" height="30" width="30"/>
+                <img src={Email} alt="Message Icon" height="20" width="20"/>
             </NavLink>
             <NavLink>
-                <img src={Email} alt="Message Icon" height="30" width="30"/>
+                <img src={Email} alt="Message Icon" height="20" width="20"/>
             </NavLink>
         </NavBar>
     )

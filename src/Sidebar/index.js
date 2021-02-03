@@ -7,10 +7,12 @@ import folderList from './../Constants/FolderList'
 import Categories from './Categories';
 import Labels from './Labels';
 
-export default function Sidebar() {
+export default function Sidebar({
+    handleShow
+}) {
     return (
         <div className="px-3">
-            <Button variant="primary" size="lg" block>
+            <Button variant="primary" size="lg" block onClick={handleShow}>
                 Compose Mail
             </Button>
             <p className="font-weight-bold my-2 text-secondary">FOLDERS</p>

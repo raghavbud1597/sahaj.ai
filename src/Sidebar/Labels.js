@@ -6,12 +6,12 @@ import Tag from './../images/tag.png';
 
 const LabelBtn = styled.span`
     cursor: pointer;
-    border: 1px solid #87898B;
-    border-radius: 5px;
+    border: 1px solid #DCDCDC;
     margin: 10px 2px;
     padding: 2px;
     white-space: nowrap;
     line-height: 2;
+    background-color: white;
 `
 
 export default function Labels() {
