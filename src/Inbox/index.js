@@ -5,15 +5,17 @@ import {
  } from 'react-bootstrap';
 import RecievedEmails from '../RecievedEmails';
 import Sidebar from '../Sidebar';
+import TopNav from '../Navbar/TopNav';
 
 export default function Inbox() {
     return (
         <div>
+            <TopNav/>
             <Row>
-                <Col md={4}>
-                    <Sidebar></Sidebar>
+                <Col md={3}>
+                    <Sidebar/>
                 </Col>
-                <Col md={8}>
+                <Col md={9}>
                     <RecievedEmails/>
                 </Col>
             </Row>

@@ -10,6 +10,12 @@ export const login = () => {
     }
 }
 
+export const logout = () => {
+    return {
+        type: 'SIGN_OUT'
+    }
+}
+
 export const getCategories = () => {
     return {
         type: 'CATEGORY_LIST'
