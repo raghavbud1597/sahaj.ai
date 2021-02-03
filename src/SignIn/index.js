@@ -17,11 +17,11 @@ export default function Signin() {
 
     return (
         <Row className="align-items-center">
-            <Col md={6} sm={12}>
-                <img src={Login} alt="Login Image" className="w-100" data-aos="fade-up"/>
+            <Col md={7} sm={12}>
+                <img src={Login} alt="Login Image" className="w-100 vh-100" data-aos="fade-up"/>
             </Col>
-            <Col md={6} sm={12} className="px-5">
-                <Row className="justify-content-center">
+            <Col md={5} sm={12} className="px-5">
+                <Row className="justify-content-start">
                     <Col md={8} >
                         <Form onSubmit={handleSubmit}>
                             <Form.Group controlId="formBasicEmail">
@@ -34,9 +34,6 @@ export default function Signin() {
                             <Form.Group controlId="formBasicPassword">
                                 <Form.Label>Password</Form.Label>
                                 <Form.Control type="password" placeholder="Password" />
-                            </Form.Group>
-                            <Form.Group controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" label="Check me out" />
                             </Form.Group>
                             <Button variant="primary" type="submit">
                                 Submit

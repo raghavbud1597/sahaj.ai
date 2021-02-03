@@ -3,7 +3,7 @@ import EmailListItem from './EmailListItem'
 
 export default function EmailList({emailList}) {
     return (
-        <div>
+        <div className="overflow-auto">
             {emailList ? emailList.map(item => {
                 return (
                     <EmailListItem

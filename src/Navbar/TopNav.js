@@ -27,10 +27,12 @@ const CountBadge = styled(Badge)`
     bottom: 8px;
     right: 28px;
     color: white;
-}
 `
 
-export default function TopNav() {
+export default function TopNav({
+    toggleExpandLeftNav,
+    expandLeftNav
+}) {
     const dispatch = useDispatch();
     const handleClick = () => {
         dispatch(logout());
@@ -38,7 +40,11 @@ export default function TopNav() {
     return (
         <Nav className="p-3 justify-content-between">
             <Nav.Item className="d-flex">
-                <Button variant="primary" className="d-flex justify-content-center align-items-center">
+                <Button 
+                variant="primary" 
+                className="d-flex justify-content-center align-items-center" 
+                onClick={()=>toggleExpandLeftNav(!expandLeftNav)}
+                >
                     <img src={Menu} alt="Menu Icon" height="20" width="20"/>
                 </Button>
                 <Form>
