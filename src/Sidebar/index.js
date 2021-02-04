@@ -33,6 +33,7 @@ export default function Sidebar({
                         badge={item.badge}
                         count={(item.name == 'Inbox') ? (emails.emailList ? emails.emailList.filter((v) => v.isRead !== true).length : 0) : item.count}
                         link={item.link}
+                        icon={item.icon}
                     />
                 )
             }) : '' }

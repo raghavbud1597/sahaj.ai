@@ -3,6 +3,12 @@ import styled from 'styled-components';
 import {Nav} from 'react-bootstrap';
 import Email from './../images/email.png';
 import Profile from './../images/profile.jpeg'
+import BarChart from './../images/bar-chart.png';
+import PieChart from './../images/pie-chart.png';
+import Block from './../images/blocks.png';
+import Test from './../images/test.png';
+import Desktop from './../images/desktop.png';
+import Worldwide from './../images/worldwide.png';
 
 const NavBar = styled(Nav)`
     background-color: #2E4050;
@@ -50,15 +56,15 @@ export default function ExpandedLeftNav() {
                 <p className="text-muted">Art Director</p>
             </NavBanner>
             <NavLink className="px-5">
-                <img src={Email} alt="Message Icon" height="20" width="20" className="mr-2"/>
+                <img src={BarChart} alt="Message Icon" height="20" width="20" className="mr-2"/>
                 Dashboard
             </NavLink>
             <NavLink className="px-5">
-                <img src={Email} alt="Message Icon" height="20" width="20" className="mr-2"/>
+                <img src={PieChart} alt="Message Icon" height="20" width="20" className="mr-2"/>
                 Layouts
             </NavLink>
             <NavLink className="px-5">
-                <img src={Email} alt="Message Icon" height="20" width="20" className="mr-2"/>
+                <img src={Block} alt="Message Icon" height="20" width="20" className="mr-2"/>
                 Graphs
             </NavLink>
             <NavLink className="active px-5">
@@ -72,15 +78,15 @@ export default function ExpandedLeftNav() {
                 </div>
             </NavLink>
             <NavLink className="px-5">
-                <img src={Email} alt="Message Icon" height="20" width="20" className="mr-2"/>
+                <img src={Worldwide} alt="Message Icon" height="20" width="20" className="mr-2"/>
                 Matrices
             </NavLink>
             <NavLink className="px-5">
-                <img src={Email} alt="Message Icon" height="20" width="20" className="mr-2"/>
+                <img src={Desktop} alt="Message Icon" height="20" width="20" className="mr-2"/>
                 Widget
             </NavLink>
             <NavLink className="px-5">
-                <img src={Email} alt="Message Icon" height="20" width="20" className="mr-2"/>
+                <img src={Test} alt="Message Icon" height="20" width="20" className="mr-2"/>
                 Forms
             </NavLink>
         </NavBar>

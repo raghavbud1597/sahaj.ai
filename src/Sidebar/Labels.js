@@ -8,7 +8,8 @@ const LabelBtn = styled.span`
     cursor: pointer;
     border: 1px solid #DCDCDC;
     margin: 10px 2px;
-    padding: 2px;
+    padding: 4px 6px;
+    border-radius: 4px;
     white-space: nowrap;
     line-height: 2;
     background-color: white;
