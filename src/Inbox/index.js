@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { 
     Row,
     Col 
@@ -12,6 +12,8 @@ import styled from 'styled-components';
 import EmailDetail from '../EmailDetail';
 import NewEmail from '../NewEmail';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {getEmailList, getSentEmailList} from './../actions';
+import {useSelector, useDispatch } from 'react-redux';
 
 const InboxSection = styled(Row)`
     background-color: #F3F3F4;
@@ -23,6 +25,13 @@ const LeftNavBar = styled.div`
 `
 
 export default function Inbox() {
+    const emails = useSelector(state => state.emails);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getEmailList());
+        dispatch(getSentEmailList());
+    }, []);
     const [expandLeftNav, toggleExpandLeftNav] = useState(false);
     const [show, setShow] = useState(false);
 
@@ -47,8 +56,12 @@ export default function Inbox() {
                             </Col>
                             <Col md={9}>
                                 <Switch>
-                                    <Route path="/sent" component={SentEmails}/>
-                                    <Route path="/" exact component={RecievedEmails}/>
+                                    <Route path="/sent">
+                                        <SentEmails emailList={emails.sentList}/>
+                                    </Route>
+                                    <Route path="/" exact>
+                                        <RecievedEmails emailList={emails.emailList}/>
+                                    </Route>
                                     <Route path="/mails/:id" exact component={EmailDetail}/>
                                 </Switch>
                             </Col>

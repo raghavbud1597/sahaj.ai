@@ -43,10 +43,14 @@ const emailReducer = (state = [], action) => {
             }  
         case 'DELETE_SENT_EMAIL':
             const reducedSentList = state?.sentList?.filter((v) => v.isSelected !== true);
-            debugger;
             return {
                 ...state,
                 sentList: reducedSentList
+            }  
+        case 'SEND_EMAIL':
+            return {
+                ...state,
+                sentList: [action.payload, ...state.sentList]
             }  
         default:
             return state 

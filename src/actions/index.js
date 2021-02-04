@@ -59,3 +59,10 @@ export const deleteSentEmail = () => {
         type: 'DELETE_SENT_EMAIL'
     }
 }
+
+export const sendEmail = (payload) => {
+    return {
+        type: 'SEND_EMAIL',
+        payload: payload
+    }
+}

@@ -38,13 +38,8 @@ const ActionBtn = styled(Button)`
     }
 `
 
-export default function RecievedEmails() {
-    const emails = useSelector(state => state.emails);
+export default function RecievedEmails({emailList}) {
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(getEmailList());
-    }, []);
 
     return (
         <EmailSection className="pt-3">
@@ -52,7 +47,7 @@ export default function RecievedEmails() {
                 <Col md={4}>
                     <h2 className="font-weight-light">
                         Inbox
-                        <span> ({emails.emailList ? emails.emailList.filter((v) => v.isRead !== true).length : 0})</span>
+                        <span> ({emailList ? emailList.filter((v) => v.isRead !== true).length : 0})</span>
                     </h2>
                 </Col>
                 <Col md={4}>
@@ -93,7 +88,7 @@ export default function RecievedEmails() {
                     </ActionBtn>
                 </Col>
             </Row>
-            <EmailList emailList={emails.emailList}/>
+            <EmailList emailList={emailList}/>
         </EmailSection>
     )
 }

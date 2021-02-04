@@ -17,6 +17,7 @@ const Email = styled(Row)`
 const LinkToEmail = styled(Link)`
     text-decoration: none;
     color: #212529;
+    font-weight: 400;
     &:hover {
         text-decoration: none;
     }

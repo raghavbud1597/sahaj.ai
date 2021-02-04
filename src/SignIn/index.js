@@ -14,7 +14,7 @@ export default function Signin() {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [error, setError] = useState(false);
-    const handleSubmit = (e) => {
+    const handleSubmit = () => {
         if(email === 'user@abc.com' && pass === '123'){
             dispatch(login());
         }
@@ -29,7 +29,7 @@ export default function Signin() {
             <Col md={5} sm={12} className="px-5">
                 <Row className="justify-content-start">
                     <Col md={8} >
-                        <Form onSubmit={handleSubmit}>
+                        <Form>
                             <Form.Group controlId="signinEmail">
                                 <Form.Label>Email address</Form.Label>
                                 <Form.Control 
@@ -57,7 +57,7 @@ export default function Signin() {
                                     </Form.Text>) : ''
                                 }
                             </Form.Group>
-                            <Button variant="primary" type="submit">
+                            <Button variant="primary" onClick={handleSubmit}>
                                 Submit
                             </Button>
                         </Form>

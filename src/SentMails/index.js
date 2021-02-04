@@ -35,13 +35,8 @@ const ActionBtn = styled(Button)`
     }
 `
 
-export default function SentEmails() {
-    const emails = useSelector(state => state.emails);
+export default function SentEmails({emailList}) {
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(getSentEmailList());
-    }, []);
 
     return (
         <EmailSection className="pt-3">
@@ -75,7 +70,7 @@ export default function SentEmails() {
                     </ActionBtn>
                 </Col>
             </Row>
-            <EmailList emailList={emails.sentList}/>
+            <EmailList emailList={emailList}/>
         </EmailSection>
     )
 }
