@@ -24,6 +24,30 @@ const emailReducer = (state = [], action) => {
                 ...state,
                 emailList: updatedList
             }  
+        case 'MARK_READ':
+            const readList = state?.emailList?.map((v) => {
+                if(v.id == action.payload){
+                    v.isRead = !v.isRead;
+                }
+                return v;
+            });
+            return {
+                ...state,
+                emailList: readList
+            }  
+        case 'DELETE_EMAIL':
+            const reducedList = state?.emailList?.filter((v) => v.isSelected !== true);
+            return {
+                ...state,
+                emailList: reducedList
+            }  
+        case 'DELETE_SENT_EMAIL':
+            const reducedSentList = state?.sentList?.filter((v) => v.isSelected !== true);
+            debugger;
+            return {
+                ...state,
+                sentList: reducedSentList
+            }  
         default:
             return state 
     }

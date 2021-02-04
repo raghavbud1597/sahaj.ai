@@ -5,12 +5,28 @@ import {
  } from 'react-bootstrap';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import {markChecked} from './../actions';
+import {markChecked, markRead} from './../actions';
 import { Link } from 'react-router-dom';
+import Attachment from './../images/paperclip.png'
 
 const Email = styled(Row)`
     ${({ color }) => `background-color:${color};`}
     ${({ weight }) => `font-weight:${weight};`}
+`
+
+const LinkToEmail = styled(Link)`
+    text-decoration: none;
+    color: #212529;
+    &:hover {
+        text-decoration: none;
+    }
+`
+const TagBadge = styled.span`
+    background-color: ${props => props.color};
+    margin: 0px 10px;
+    padding: 3px;
+    border-radius: 4px;
+    color: #fff;
 `
 
 export default function EmailListItem({
@@ -19,8 +35,9 @@ export default function EmailListItem({
     title ='',
     time ='',
     isSelected = false,
-    isAttachment,
-    isRead = false
+    isAttachment = false,
+    isRead = false,
+    tag
 }) {
     const dispatch = useDispatch();
     return (
@@ -34,14 +51,30 @@ export default function EmailListItem({
                     />
                 </Col>
                 <Col md={4} sm={4}>
-                    <Link to={`/mails/${id}`}>
-                        {name}
-                    </Link>
+                    <LinkToEmail to={`/mails/${id}`} onClick={()=>dispatch(markRead(id))}>
+                        <Row className="no-gutters justify-content-between">
+                            <Col>{name}</Col>
+                            <Col className="text-right">
+                                {tag ? (
+                                    <TagBadge color={tag.color}>
+                                        {tag.name}
+                                    </TagBadge>
+                                ): ''}
+                            </Col>
+                        </Row>
+                    </LinkToEmail>
                 </Col>
                 <Col md={5} sm={5}>
-                    <Link to={`/mails/${id}`}>
-                        {title}
-                        </Link>
+                    <LinkToEmail to={`/mails/${id}`} onClick={()=>dispatch(markRead(id))}>
+                    <Row className="no-gutters justify-content-between">
+                            <Col>{title}</Col>
+                            <Col className="text-right">
+                            {isAttachment ? (
+                                    <img src={Attachment} alt="Attachment Image" height="20" width="20"/>
+                                ): ''}
+                            </Col>
+                        </Row>
+                    </LinkToEmail>
                 </Col>
                 <Col md={2} sm={2} className="text-right">{time}</Col>
             </Email>

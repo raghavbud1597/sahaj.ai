@@ -40,3 +40,22 @@ export const markChecked = (selectedId) => {
         payload: selectedId
     }
 }
+
+export const markRead = (selectedId) => {
+    return {
+        type: 'MARK_READ',
+        payload: selectedId
+    }
+}
+
+export const deleteEmail = () => {
+    return {
+        type: 'DELETE_EMAIL'
+    }
+}
+
+export const deleteSentEmail = () => {
+    return {
+        type: 'DELETE_SENT_EMAIL'
+    }
+}

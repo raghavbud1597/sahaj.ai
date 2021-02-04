@@ -22,6 +22,7 @@ export default function EmailList({emailList}) {
                         isRead={item.isRead}
                         isSelected={item.isSelected}
                         isAttachment={item.isAttachment}
+                        tag={item.tag}
                     />
                 )
             }) : '' }

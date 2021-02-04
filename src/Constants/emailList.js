@@ -16,6 +16,11 @@ const emailList = [{
         title: 'It is a long established fact',
         description: 'It is a long established fact',
         email: 'bcs@abc.com',
+        tag: {
+            id: 1,
+            name: 'Work',
+            color: '#a4af69'
+        },
         time: '8.22 PM',
         isSelected: false,
         isAttachment: false
@@ -48,6 +53,11 @@ const emailList = [{
         name: 'Alex T.',
         title: 'Various versions have',
         description: 'Various versions have',
+        tag: {
+            id: 2,
+            name: 'Documents',
+            color: '#D35269'
+        },
         email: 'sds@abc.com',
         time: 'Dec 22',
         isSelected: false,
