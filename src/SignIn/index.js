@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     Row, 
     Col,
@@ -11,8 +11,14 @@ import {login} from './../actions'
 
 export default function Signin() {
     const dispatch = useDispatch();
+    const [email, setEmail] = useState('');
+    const [pass, setPass] = useState('');
+    const [error, setError] = useState(false);
     const handleSubmit = (e) => {
-        dispatch(login());
+        if(email === 'user@abc.com' && pass === '123'){
+            dispatch(login());
+        }
+        setError(true);
       };
 
     return (
@@ -24,16 +30,32 @@ export default function Signin() {
                 <Row className="justify-content-start">
                     <Col md={8} >
                         <Form onSubmit={handleSubmit}>
-                            <Form.Group controlId="formBasicEmail">
+                            <Form.Group controlId="signinEmail">
                                 <Form.Label>Email address</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email" />
+                                <Form.Control 
+                                    type="email" 
+                                    placeholder="Enter email" 
+                                    value={email}
+                                    onChange={e => setEmail(e.target.value)}
+                                />
                                 <Form.Text className="text-muted">
                                 We'll never share your email with anyone else.
                                 </Form.Text>
                             </Form.Group>
                             <Form.Group controlId="formBasicPassword">
                                 <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" placeholder="Password" />
+                                <Form.Control 
+                                    type="password" 
+                                    placeholder="Password"
+                                    value={pass}
+                                    onChange={e => setPass(e.target.value)} 
+                                />
+                                {
+                                    error ? (
+                                    <Form.Text className="text-danger">
+                                        Invalid Username Password
+                                    </Form.Text>) : ''
+                                }
                             </Form.Group>
                             <Button variant="primary" type="submit">
                                 Submit
