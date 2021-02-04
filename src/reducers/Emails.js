@@ -27,7 +27,7 @@ const emailReducer = (state = [], action) => {
         case 'MARK_READ':
             const readList = state?.emailList?.map((v) => {
                 if(v.id == action.payload){
-                    v.isRead = !v.isRead;
+                    v.isRead = true;
                 }
                 return v;
             });
